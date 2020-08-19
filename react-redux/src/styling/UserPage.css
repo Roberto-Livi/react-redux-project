@@ -1,0 +1,15 @@
+body {
+    background-image: url("../pictures/erik-mclean-2DGgShWwAx8-unsplash.jpg");
+    background-size: 110%;
+}
+
+#segment {
+    width: 80%;
+    left: 150px;
+    height: 800px;
+    margin-top: 5%;
+}
+
+#username {
+    text-align: center;
+}
