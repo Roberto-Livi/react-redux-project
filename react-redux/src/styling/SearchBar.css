@@ -1,0 +1,10 @@
+#segment {
+    width: 50%;
+    left: 300px;
+    top: 150px;
+}
+
+body {
+    background-image: url("../pictures/shaah-shahidh-cFRA3_hpkkY-unsplash.jpg");
+    background-size: 110%;
+}

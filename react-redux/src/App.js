@@ -1,10 +1,11 @@
 import React from 'react';
-import Login from './components/Login'
+import SearchBar from './components/SearchBar'
+
 
 function App() {
   return (
     <div>
-      <Login />
+      <SearchBar />
     </div>
   );
 }
