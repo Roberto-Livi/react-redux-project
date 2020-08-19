@@ -1,0 +1,16 @@
+body {
+    background-image: url("../pictures/paul-macallan-Id8KeYl71ec-unsplash.jpg");
+}
+
+#form {
+    width: 60%;
+    left: 270px;
+    height: 400px;
+    margin-top: 10%;
+}
+
+#heading {
+    text-align: center;
+    font-size: 60px;
+    margin: 50px;
+}
