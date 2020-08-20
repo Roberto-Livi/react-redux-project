@@ -4,16 +4,20 @@ import UserPage from './components/UserPage'
 import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
 import Home from './components/Home'
+import Login from './components/Login'
 // import './styling/App.css'
 
 
 function App() {
 
+  const header = window.location.pathname !== "/" ? <Header /> : null;
+
   return (
     <div>
-      <Header />
+      {header}
       <Switch>
-        <Route component={Home} exact path="/" />
+        <Route component={Login} exact path="/" />
+        <Route component={Home} exact path="/home" />
         <Route component={UserPage} exact path="/userpage" />
         <Route component={SearchBar} exact path="/searchbar" />
       </Switch>

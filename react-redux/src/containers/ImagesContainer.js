@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from '../components/SearchBar'
 import Images from '../components/Images'
+
 import { connect } from 'react-redux'
 
 class ImagesContainer extends React.Component {
@@ -8,13 +9,14 @@ class ImagesContainer extends React.Component {
         return (
             <div>
                 <SearchBar addImage={this.props.addImage} />
+                <Images images={this.props.images}/>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return { images: state.images}
+    return { images: state.images }
 }
 
 const mapDispatchToProps = dispatch => ({

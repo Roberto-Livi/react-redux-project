@@ -2,20 +2,24 @@ import React from 'react'
 import '../styling/Login.css'
 
 class Login extends React.Component {
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        console.log("hello");
+        return window.location.pathname = "/home"
+    }
     render() {
         return (
             <div>
-            <form id="form" className="ui form segment">
-                <h1 id="heading">PhotoWorks</h1>
+            <form onSubmit={(e) => this.handleOnSubmit(e)} id="form" className="ui form segment">
+                <h1 id="heading">PhotoOps</h1>
                 <div className="field">
                     <label>Enter Username</label>
                     <input
                     type="text"
                     />
                 </div>
-                <div className="ui primary submit button">Submit</div>
-                <div className="ui error message">
-                </div>
+                <button className="ui primary submit button">Submit</button>
             </form>
             </div>
         )
