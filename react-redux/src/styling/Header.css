@@ -1,0 +1,23 @@
+#background {
+    background-color: black;
+    height: 60px;
+    padding: 10px;
+}
+
+#search {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(45, 87, 226);
+    padding: 10px;
+    position: absolute;
+    left: 1000px;
+}
+
+#user {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(45, 87, 226);
+    padding: 10px;
+    position: absolute;
+    left: 1200px;
+}
