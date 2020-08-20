@@ -1,4 +1,5 @@
 import React from "react";
+import Image from './Image'
 import "../styling/SearchBar.css";
 
 class SearchBar extends React.Component {
@@ -28,6 +29,7 @@ class SearchBar extends React.Component {
                     />
                 </div>
                 </form>
+                <Image />
             </div>
         );
     }
