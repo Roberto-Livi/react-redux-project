@@ -6,6 +6,8 @@ class Login extends React.Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
         console.log("hello");
+        fetch("http://localhost:3000/users")
+
         return window.location.pathname = "/home"
     }
     render() {
