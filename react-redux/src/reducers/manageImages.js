@@ -1,4 +1,4 @@
-export function manageImages(state = { images: [] }, action) {
+const manageImages = (state = { images: []}, action) => {
     switch(action.type) {
         case 'ADD_IMAGE':
             const image = {
@@ -9,3 +9,5 @@ export function manageImages(state = { images: [] }, action) {
             return state;
     }
 }
+
+export default manageImages
