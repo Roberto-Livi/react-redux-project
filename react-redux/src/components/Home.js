@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 const Home = () => {
+
     return (
             <div className="ui segment" style={{width: "47%",
         backgroundColor: "lightblue",
@@ -9,6 +10,5 @@ const Home = () => {
         </div>
     )
 }
-
 
 export default connect()(Home)

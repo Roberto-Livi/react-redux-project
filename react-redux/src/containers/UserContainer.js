@@ -14,10 +14,23 @@ class UserContainer extends React.Component {
         this.setState({ username: event.target.value})
     }
 
+
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.addUsername(this.state.username)
+        this.usernameToRailsApi(this.state.username)
         this.setState({ submitted: true})
+    }
+
+    usernameToRailsApi = (username) => {
+        fetch(`http://localhost:3000/users`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(username)
+    })
     }
 
     render() {
