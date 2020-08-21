@@ -1,5 +1,6 @@
-import React from "react";
-import Image from './Image'
+import React from 'react'
+import { connect } from "react-redux";
+import { fetchImages } from "../actions/imageActions";
 import "../styling/SearchBar.css";
 
 class SearchBar extends React.Component {
@@ -12,14 +13,13 @@ class SearchBar extends React.Component {
 
     onFormSubmit = (event) => {
         event.preventDefault()
-        this.props.onSearchSubmit(this.state.term)
+        this.props.fetchImages(this.state.term)
         this.setState({ term: '' })
     }
-
     render() {
         return (
-            <div id="segment" className="ui segment">
-                <form className="ui form" onSubmit={this.onFormSubmit}>
+            <div>
+            <form className="ui form" onSubmit={this.onFormSubmit}>
                 <div className="field">
                     <label>Image Search</label>
                     <input
@@ -29,10 +29,9 @@ class SearchBar extends React.Component {
                     />
                 </div>
                 </form>
-                <Image />
             </div>
-        );
+        )
     }
 }
 
-export default SearchBar
+export default connect(null, { fetchImages })(SearchBar);

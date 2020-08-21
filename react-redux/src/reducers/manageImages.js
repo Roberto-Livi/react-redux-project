@@ -1,12 +1,13 @@
-const manageImages = (state = { images: [], username: ''}, action) => {
+const manageImages = (state = { temporaryImages: [], images: [], username: ''}, action) => {
     switch(action.type) {
         case 'ADD_IMAGE':
-            const image = {
-                images: action.img
-            }
-            return Object.assign({}, state, { images: [...state.images, image] });
+            return { ...state, images: [...state.images, action.imageToSave] };
         case 'ADD_USERNAME':
-            return Object.assign({}, state, { username: action.un });
+            return {...state, username: action.un}
+        case 'SET_TEMPORARY_IMAGES':
+            return {...state, temporaryImages: action.temporaryImages}
+        case 'DELETE_IMAGE':
+            return {...state, images: state.images.filter(image => image !== action.imageToDelete)}
         default:
             return state;
     }
