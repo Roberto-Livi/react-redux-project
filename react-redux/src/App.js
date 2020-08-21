@@ -4,7 +4,7 @@ import UserPage from './components/UserPage'
 import SearchBar from "./containers/ImageContainer";
 import Header from "./components/Header";
 import Home from './components/Home'
-import Login from './components/Login'
+import UserContainer from './containers/UserContainer'
 // import './styling/App.css'
 
 
@@ -16,7 +16,7 @@ class App extends React.Component {
       <div>
         {header}
         <Switch>
-          <Route component={Login} exact path="/" />
+          <Route component={UserContainer} exact path="/" />
           <Route component={Home} exact path="/home" />
           <Route component={UserPage} exact path="/userpage" />
           <Route exact path="/searchbar" render={() => <SearchBar onSearchSubmit={this.onSearchSubmit}/>}/>

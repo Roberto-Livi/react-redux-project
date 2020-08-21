@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom";
 import '../styling/Login.css'
 
-class Login extends React.Component {
+class UserContainer extends React.Component {
 
     state = {
         username: '',
@@ -48,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
     addUsername: un => dispatch({ type: "ADD_USERNAME", un})
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

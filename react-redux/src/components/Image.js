@@ -1,12 +1,18 @@
 import React from 'react'
 import { storeImage, deleteImage } from '../actions/imageActions'
 import { connect } from 'react-redux'
+
+
 const Image = (props) => {
+
+    const verifyDuplicate = (url) => {
+        return props.images.includes(url) ? null : props.storeImage(url);
+    };
 
     return (
         <div>
         <div style={{ position: "relative"}}>
-            <img style={{ maxWidth: "100%", padding: 4}} onClick={() => props.storeImage(props.url)} src={props.url} alt=''/>
+            <img style={{ maxWidth: "100%", padding: 4}} onClick={() => verifyDuplicate(props.url)} src={props.url} alt=''/>
             { props.showDeleteButton
             ? <button onClick={() => props.deleteImage(props.url)} style={{ position: "absolute", top: 10, left: 10 }}>X</button>
             : null
@@ -16,4 +22,8 @@ const Image = (props) => {
     )
 }
 
-export default connect(null, { storeImage, deleteImage })(Image)
+const mapStateToProps = ({ images }) => {
+    return { images }
+}
+
+export default connect(mapStateToProps, { storeImage, deleteImage })(Image)
