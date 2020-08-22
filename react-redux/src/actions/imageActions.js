@@ -19,3 +19,9 @@ export const deleteImage = (imageToDelete) => {
         dispatch({ type: "DELETE_IMAGE", imageToDelete})
     }
 }
+
+export const storeId = (id) => {
+    return (dispatch) => {
+        dispatch({ type: "STORE_ID", id})
+    }
+}

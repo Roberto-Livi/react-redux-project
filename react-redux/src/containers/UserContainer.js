@@ -31,6 +31,8 @@ class UserContainer extends React.Component {
             },
             body: JSON.stringify(username)
     })
+            .then(resp => resp.json())
+            .then(data => this.props.storeId(data.id))
     }
 
     render() {
@@ -53,12 +55,13 @@ class UserContainer extends React.Component {
     }
 }
 
-const mapStateToProps = ({username}) => {
+const mapStateToProps = ({username }) => {
     return { username }
 }
 
 const mapDispatchToProps = dispatch => ({
-    addUsername: un => dispatch({ type: "ADD_USERNAME", un})
+    addUsername: un => dispatch({ type: "ADD_USERNAME", un}),
+    storeId: id => dispatch({ type: "STORE_ID", id})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

@@ -10,14 +10,33 @@
     background-color: rgb(45, 87, 226);
     padding: 10px;
     position: absolute;
-    left: 1000px;
+    left: 50px;
 }
 
-#user {
+#pickedimages {
     font-size: 20px;
     color: white;
     background-color: rgb(45, 87, 226);
     padding: 10px;
     position: absolute;
-    left: 1200px;
+    left: 250px;
 }
+
+#savedImages {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(45, 87, 226);
+    padding: 10px;
+    position: absolute;
+    left: 450px;
+}
+
+#logout {
+    font-size: 15px;
+    color: white;
+    background-color: red;
+    padding: 8px;
+    position: absolute;
+    left: 1250px;
+}
+

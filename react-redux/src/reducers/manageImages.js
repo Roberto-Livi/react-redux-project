@@ -1,4 +1,4 @@
-const manageImages = (state = { temporaryImages: [], images: [], username: ''}, action) => {
+const manageImages = (state = { temporaryImages: [], images: [], username: '', id: ''}, action) => {
     switch(action.type) {
         case 'ADD_IMAGE':
             return { ...state, images: [...state.images, action.imageToSave] };
@@ -8,6 +8,8 @@ const manageImages = (state = { temporaryImages: [], images: [], username: ''}, 
             return {...state, temporaryImages: action.temporaryImages}
         case 'DELETE_IMAGE':
             return {...state, images: state.images.filter(image => image !== action.imageToDelete)}
+        case 'STORE_ID':
+            return { ...state, id: action.id };
         default:
             return state;
     }
