@@ -2,7 +2,7 @@ import React from 'react'
 import DBimages from './DBimages'
 import { connect } from 'react-redux'
 
-class SavedImages extends React.Component {
+class FetchImages extends React.Component {
 
     state = {
         images: []
@@ -32,4 +32,4 @@ const mapStateToProps = ({ id }) => {
     return { id }
 }
 
-export default connect(mapStateToProps)(SavedImages)
+export default connect(mapStateToProps)(FetchImages)

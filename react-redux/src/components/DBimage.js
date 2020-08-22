@@ -2,7 +2,7 @@ import React from 'react'
 import { deleteImage } from "../actions/imageActions";
 import { connect } from "react-redux";
 
-const DB = (props) => {
+const DBimage = (props) => {
 
     const deleteUrlFromUser = (url) => {
         fetch(`http://localhost:3000/users/${props.id}`, {
@@ -38,18 +38,4 @@ const mapStateToProps = ({ id }) => {
     return { id };
 };
 
-export default connect(mapStateToProps, { deleteImage })(DB)
-
-
-
-// <div>
-//         <div id="segment" className="ui form segment">
-//             <h1 style={{textAlign: "center" }}>Database Images</h1>
-//         </div>
-//         <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", marginTop: 40, alignContent: "center"}}>
-//         <div style={{ position: "relative"}}>
-//                 <img style={{ maxWidth: "100%" }} src={props.url} alt="" />
-//                 <button onClick={() => deleteUrlFromUser(props.url)} style={{ position: "absolute", top: 10, left: 10 }}>X</button>
-//             </div>
-//         </div>
-//         </div>
+export default connect(mapStateToProps, { deleteImage })(DBimage)

@@ -1,9 +1,9 @@
 import React from 'react'
-import DB from './DB'
+import DBimage from './DBimage'
 
 const DBimages = (props) => {
 
-    const renderImages = props.images.map((image, index) => <DB key={index} url={image.attributes.image} /> )
+    const renderImages = props.images.map((image, index) => <DBimage key={index} url={image.attributes.image} /> )
 
     return (
         <div>
