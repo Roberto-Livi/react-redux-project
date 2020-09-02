@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 const Home = () => {
     return (
             <div className="ui segment" style={{width: "40%",
@@ -11,4 +10,4 @@ const Home = () => {
 }
 
 
-export default connect()(Home)
+export default Home
