@@ -1,15 +1,29 @@
 import React from 'react'
+import { fetchDBImages } from '../actions/imageActions'
+import { connect } from 'react-redux'
 import DBimage from './DBimage'
 
-const DBimages = (props) => {
+class DBimages extends React.Component {
 
-    const renderImages = props.images.map((image, index) => <DBimage key={index} url={image.attributes.image} /> )
+    renderImages = () => {
+        return this.props.images.map((url, index) => <DBimage key={index} url={url.attributes.image} /> )
+    }
 
+    componentDidMount() {
+        this.props.fetchDBImages(this.props.id)
+    }
+
+    render() {
     return (
         <div>
-            {renderImages}
+            {this.renderImages()}
         </div>
     )
+    }
 }
 
-export default DBimages
+const mapStateToProps = ({ images, id }) => {
+    return { images, id }
+}
+
+export default connect(mapStateToProps, { fetchDBImages })(DBimages)

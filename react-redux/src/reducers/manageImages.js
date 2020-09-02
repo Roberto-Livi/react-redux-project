@@ -7,9 +7,12 @@ const manageImages = (state = { temporaryImages: [], images: [], username: '', i
         case 'SET_TEMPORARY_IMAGES':
             return {...state, temporaryImages: action.temporaryImages}
         case 'DELETE_IMAGE':
-            return {...state, images: state.images.filter(image => image !== action.imageToDelete)}
+            debugger;
+            return {...state, images: state.images.filter(image => image.url !== action.imageToDelete)}
         case 'STORE_ID':
             return { ...state, id: action.id };
+        case 'ADD_IMAGES':
+            return {...state, images: action.images}
         default:
             return state;
     }
