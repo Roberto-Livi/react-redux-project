@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 const DBimage = (props) => {
 
     const deleteUrlFromUser = (url) => {
+        props.deleteImage(url);
         fetch(`http://localhost:3000/users/${props.id}`, {
             method: 'DELETE',
             headers: {
@@ -13,7 +14,6 @@ const DBimage = (props) => {
             },
             body: JSON.stringify(url)
         })
-        props.deleteImage(url)
     }
 
     return (

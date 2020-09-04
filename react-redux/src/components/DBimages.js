@@ -5,12 +5,14 @@ import DBimage from './DBimage'
 
 class DBimages extends React.Component {
 
-    renderImages = () => {
-        return this.props.images.map((url, index) => <DBimage key={index} url={url.attributes.image} /> )
+    constructor(props) {
+        super(props)
+        this.props.fetchDBImages(this.props.id)
     }
 
-    componentDidMount() {
-        this.props.fetchDBImages(this.props.id)
+    renderImages = () => {
+        console.log(this.props.images);
+        return this.props.images.map((url, index) => <DBimage key={index} url={url} /> )
     }
 
     render() {
