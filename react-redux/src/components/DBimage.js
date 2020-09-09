@@ -2,11 +2,15 @@ import React from 'react'
 import { deleteImage } from "../actions/imageActions";
 import { connect } from "react-redux";
 
-const DBimage = (props) => {
+class DBimage extends React.Component {
 
-    const deleteUrlFromUser = (url) => {
-        props.deleteImage(url);
-        fetch(`http://localhost:3000/users/${props.id}`, {
+    state = {
+        liked: 'Like'
+    }
+
+    deleteUrlFromUser = (url) => {
+        this.props.deleteImage(url);
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
@@ -16,6 +20,15 @@ const DBimage = (props) => {
         })
     }
 
+    likedPic = () => {
+        if(this.state.liked === "Like") {
+            this.setState({ liked: "Liked"})
+        } else if(this.state.liked === "Liked"){
+            this.setState({ liked: "Like"})
+        }
+    }
+
+    render() {
     return (
 
         <div>
@@ -25,13 +38,20 @@ const DBimage = (props) => {
         <div style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", marginTop: 40}}>
         <div>
         <div style={{ position: "relative"}}>
-                <img style={{ marginLeft: 50, maxWidth: "180%", padding: 4 }} src={props.url} alt="" />
-                <button onClick={() => deleteUrlFromUser(props.url)} style={{ position: "absolute", top: 10, left: 10, marginLeft: 47 }}>X</button>
+                <img style={{ marginLeft: 50, maxWidth: "180%", padding: 4 }} src={this.props.url} alt="" />
+                <button onClick={() => this.deleteUrlFromUser(this.props.url)} style={{ position: "absolute", top: 10, left: 10, marginLeft: 47 }}>X</button>
+                <button style={{
+                    position: "absolute",
+                    left: 20,
+                    marginLeft: 50,
+                    backgroundColor: this.state.liked === "Like" ? "white" : "red"
+                }} onClick={() => this.likedPic()}>{this.state.liked}</button>
             </div>
         </div>
         </div>
         </div>
     )
+}
 }
 
 const mapStateToProps = ({ id }) => {
